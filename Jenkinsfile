@@ -9,15 +9,17 @@ pipeline {
                 // Grab any dependencies 
                 bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestApp.sln'
                 bat 'msbuild XboxTestApp/XboxTestApp.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms="x64" -property:Configuration=Debug -property:Platform=x64'
+                bat 'msbuild XboxTestAppUnitTests/XboxTestAppUnitTests.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms="x64" -property:Configuration=Debug -property:Platform=x64'
             }
         }
-        /*stage ('test') {
+        stage ('test') {
             steps {
-                // Run the UWP Unit test application again through a powershell script and succeed or fail based on the results.
-                // Create a powershell script or something that will return non-zero on false.
+                // Build the test app.
+                // Run the tests on the test app.       
+                // bat 'vstest '
             }
         }
-        stage ('deploy') {
+        /*stage ('deploy') {
             steps {
                 // Here we will run yet another powershell script that will copy the contents to a remote server where QA will be able to pull down the package.
                 // Change
