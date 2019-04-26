@@ -4,8 +4,8 @@ pipeline {
         stage ('build') {
             steps {
                 // Grab any dependencies
-                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe locals clear'    
-                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe ConfigFile=Nuget.Config restore "C:/Users/XboxDevProfile/Developement/XboxTestApp/XboxTestApp.sln"'
+                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe locals all -Clear'
+                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestApp.sln'
                 bat 'msbuild XboxTestApp/XboxTestApp.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms="x64" -property:Configuration=Debug -property:Platform=x64'
                 bat 'msbuild XboxTestAppUnitTests/XboxTestAppUnitTests.csproj -property:AppxBundlePlatforms="x64" -property:Configuration=Release'
             }
