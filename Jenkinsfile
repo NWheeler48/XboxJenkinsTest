@@ -8,7 +8,7 @@ pipeline {
                 // Or
                 // call a powershell script.
                 // We have to determine if we want to keep the artifacts from the build, my gut says no since its not a huge project with many moving pieces.
-                bat 'msbuild XboxTestApp\XboxTestApp.csproj -p:Configuration=Debug -p:Platform=x64'
+                bat 'msbuild XboxTestApp/XboxTestApp.csproj -p:Configuration=Debug -p:Platform=x64'
             }
         }
         stage ('test') {
