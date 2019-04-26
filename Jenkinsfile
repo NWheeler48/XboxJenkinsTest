@@ -8,8 +8,8 @@ pipeline {
                 // Or
                 // call a powershell script.
                 // We have to determine if we want to keep the artifacts from the build, my gut says no since its not a huge project with many moving pieces.
-                bat 'C:\Users\XboxDevProfile\.nuget\nuget.exe locals global-packages -clear'
-                bat 'C:\Users\XboxDevProfile\.nuget\nuget.exe restore XboxTestApp.sln'
+                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe locals global-packages -clear'
+                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestApp.sln'
                 bat 'msbuild XboxTestApp\XboxTestApp.csproj -property:Configuration=Debug -property:Platform=x64'
             }
         }
