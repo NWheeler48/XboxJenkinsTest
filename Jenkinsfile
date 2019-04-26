@@ -8,7 +8,8 @@ pipeline {
                 
                 // Grab any dependencies 
                 bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestApp.sln'
-                bat 'msbuild XboxTestApp/XboxTestApp.csproj -property:AppxBundle=Always -property:Configuration=Debug -property:Platform=x64'
+                bat 'msbuild XboxTestApp/XboxTestApp.csproj -target:Clean'
+                bat 'msbuild XboxTestApp/XboxTestApp.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms=x64 -property:Configuration=Debug -property:Platform=x64'
             }
         }
         /*stage ('test') {
