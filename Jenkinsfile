@@ -12,7 +12,7 @@ pipeline {
                 bat 'msbuild XboxTestAppUnitTests/XboxTestAppUnitTests.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms="x64" -property:Configuration=Debug -property:Platform=x64'
             }
         }
-        stage ('test') {
+        /*stage ('test') {
             steps {
                 // Build the test app.
                 // Run the tests on the test app.       
