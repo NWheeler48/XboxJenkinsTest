@@ -158,6 +158,12 @@
       <Version>1.4.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XboxTestApp\XboxTestApp.csproj">
+      <Project>{1dc7300e-cd48-4c97-825a-d05965a827c3}</Project>
+      <Name>XboxTestApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
