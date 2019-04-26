@@ -7,9 +7,8 @@ pipeline {
                 bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe locals global-packages -clear'
                 
                 // Grab any dependencies 
-                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestApp.sln'
+                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore'
                 bat 'msbuild XboxTestApp/XboxTestApp.csproj -property:AppxBundle=Always -property:AppxBundlePlatforms="x64" -property:Configuration=Debug -property:Platform=x64'
-                bat 'C:/Users/XboxDevProfile/.nuget/nuget.exe restore XboxTestAppUnitTests/XboxTestAppUnitTests.csproj'
                 bat 'msbuild XboxTestAppUnitTests/XboxTestAppUnitTests.csproj -property:AppxBundlePlatforms="x64" -property:Configuration=Release'
             }
         }
