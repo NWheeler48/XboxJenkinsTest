@@ -1,0 +1,3 @@
+# Ignore The Build Dirs
+ XboxTestApp/obj/
+ .vs/
