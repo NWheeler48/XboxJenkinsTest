@@ -10,11 +10,12 @@ pipeline {
                 bat 'msbuild XboxTestAppUnitTests/XboxTestAppUnitTests.csproj -property:AppxBundlePlatforms="x64" -property:Configuration=Release'
             }
         }
-        /*stage ('test') {
+        stage ('test') {
             steps {
-                // Build the test app.
+                // Install the certificate for the test app.
+                bat '"C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\certmgr.exe" /add "C:\Users\XboxDevProfile\Developement\XboxTestApp\XboxTestAppUnitTests\AppPackages\XboxTestAppUnitTests_1.0.0.0_x86_Test\XboxTestAppUnitTests_1.0.0.0_x86.cer" /s /r localMachine trustedPeople'
                 // Run the tests on the test app.       
-                // bat 'vstest '
+                bat '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" "C:\Users\XboxDevProfile\Developement\XboxTestApp\XboxTestAppUnitTests\AppPackages\XboxTestAppUnitTests_1.0.0.0_x86_Test\XboxTestAppUnitTests_1.0.0.0_x86.appx"'
             }
         }
         /*stage ('deploy') {
