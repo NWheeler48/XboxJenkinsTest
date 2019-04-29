@@ -18,7 +18,7 @@ pipeline {
                 //powershell 'Remove-AppxPackage -Package XboxTestAppUnitTests_1.0.0.0_x86.appx'
                 
                 // Run the tests on the test app.       
-                bat '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" "C:/Users/XboxDevProfile/Developement/XboxTestApp/XboxTestAppUnitTests/AppPackages/XboxTestAppUnitTests_1.0.0.0_x86_Test/XboxTestAppUnitTests_1.0.0.0_x86.appx"'
+                bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/Extensions/TestPlatform/vstest.console.exe" "C:/Users/XboxDevProfile/Developement/XboxTestApp/XboxTestAppUnitTests/AppPackages/XboxTestAppUnitTests_1.0.0.0_x86_Test/XboxTestAppUnitTests_1.0.0.0_x86.appx"'
             }
         }
         /*stage ('deploy') {
